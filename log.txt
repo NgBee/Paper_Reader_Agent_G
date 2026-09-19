@@ -1,0 +1,92 @@
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'underscore_attrs_are_private' has been removed
+  warnings.warn(message, UserWarning)
+Installed 107 packages in 300ms
+2026-09-13 20:32:45.551 | INFO     | app.tool.mcp:_initialize_and_list_tools:153 - Connected to server browser_use with tools: ['browser_exec', 'browser_screenshot']
+2026-09-13 20:32:45.551 | INFO     | app.agent.manus:initialize_mcp_servers:97 - Connected to Browser Use CLI 3.0 through MCP
+Enter your prompt: 2026-09-13 20:33:09.670 | WARNING  | __main__:main:25 - Processing your request...
+2026-09-13 20:33:09.671 | INFO     | app.agent.base:run:140 - Executing step 1/20
+2026-09-13 20:33:10.988 | INFO     | app.llm:update_token_count:243 - Token usage: Input=4275, Completion=87, Cumulative Input=4275, Cumulative Completion=87, Total=4362, Cumulative Total=4362
+2026-09-13 20:33:10.989 | INFO     | app.agent.toolcall:think:81 - ✨ Manus's thoughts: I'll open baidu.com for you using the browser.
+2026-09-13 20:33:10.989 | INFO     | app.agent.toolcall:think:82 - 🛠️ Manus selected 1 tools to use
+2026-09-13 20:33:10.989 | INFO     | app.agent.toolcall:think:86 - 🧰 Tools being prepared: ['browser_exec']
+2026-09-13 20:33:10.989 | INFO     | app.agent.toolcall:think:89 - 🔧 Tool arguments: {"code": "new_tab(\"https://www.baidu.com\")\nprint(page_info())"}
+2026-09-13 20:33:10.989 | INFO     | app.agent.toolcall:execute_tool:188 - 🔧 Activating tool: 'browser_exec'...
+2026-09-13 20:33:10.989 | INFO     | app.tool.mcp:execute:27 - Executing tool: browser_exec
+2026-09-13 20:33:20.919 | INFO     | app.agent.toolcall:act:151 - 🎯 Tool 'browser_exec' completed its mission! Result: Observed output of cmd `browser_exec` executed:
+Traceback (most recent call last):
+  File "/Users/ngbee/.cache/uv/archive-v0/0bEo9MtKA0pHHpr8/lib/python3.12/site-packages/browser_use/mcp/cli_mcp.py", line 142, in _execute
+    self._ensure_daemon(code)
+  File "/Users/ngbee/.cache/uv/archive-v0/0bEo9MtKA0pHHpr8/lib/python3.12/site-packages/browser_use/mcp/cli_mcp.py", line 129, in _ensure_daemon
+    ns['ensure_daemon']()
+  File "/Users/ngbee/.cache/uv/archive-v0/0bEo9MtKA0pHHpr8/lib/python3.12/site-packages/browser_harness/admin.py", line 708, in ensure_daemon
+    raise RuntimeError(f"daemon {name or NAME} didn't come up -- check {ipc.log_path(name or NAME)}")
+RuntimeError: daemon default didn't come up -- check /Users/ngbee/.config/browser-harness/tmp/bu-default.log
+
+2026-09-13 20:33:20.919 | INFO     | app.agent.base:run:140 - Executing step 2/20
+2026-09-13 20:33:22.142 | INFO     | app.llm:update_token_count:243 - Token usage: Input=4696, Completion=218, Cumulative Input=8971, Cumulative Completion=305, Total=4914, Cumulative Total=9276
+2026-09-13 20:33:22.143 | INFO     | app.agent.toolcall:think:81 - ✨ Manus's thoughts: The daemon failed to start. Let me check the log and run diagnostics.
+2026-09-13 20:33:22.143 | INFO     | app.agent.toolcall:think:82 - 🛠️ Manus selected 2 tools to use
+2026-09-13 20:33:22.143 | INFO     | app.agent.toolcall:think:86 - 🧰 Tools being prepared: ['python_execute', 'python_execute']
+2026-09-13 20:33:22.143 | INFO     | app.agent.toolcall:think:89 - 🔧 Tool arguments: {"code": "import subprocess\nout = subprocess.run([\"cat\", \"/Users/ngbee/.config/browser-harness/tmp/bu-default.log\"], capture_output=True, text=True)\nprint(\"STDOUT:\", out.stdout[-4000:])\nprint(\"STDERR:\", out.stderr[-2000:])"}
+2026-09-13 20:33:22.143 | INFO     | app.agent.toolcall:execute_tool:188 - 🔧 Activating tool: 'python_execute'...
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'underscore_attrs_are_private' has been removed
+  warnings.warn(message, UserWarning)
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'underscore_attrs_are_private' has been removed
+  warnings.warn(message, UserWarning)
+2026-09-13 20:33:23.142 | INFO     | app.agent.toolcall:act:151 - 🎯 Tool 'python_execute' completed its mission! Result: Observed output of cmd `python_execute` executed:
+{'observation': "STDOUT: fatal: DevToolsActivePort not found in ['/Users/ngbee/Library/Application Support/Google/Chrome', '/Users/ngbee/Library/Application Support/Google/Chrome Canary', '/Users/ngbee/Library/Application Support/Comet', '/Users/ngbee/Library/Application Support/Arc/User Data', '/Users/ngbee/Library/Application Support/Dia/User Data', '/Users/ngbee/Library/Application Support/Microsoft Edge', '/Users/ngbee/Library/Application Support/Microsoft Edge Beta', '/Users/ngbee/Library/Application Support/Microsoft Edge Dev', '/Users/ngbee/Library/Application Support/Microsoft Edge Canary', '/Users/ngbee/Library/Application Support/BraveSoftware/Brave-Browser', '/Users/ngbee/Library/Application Support/BraveSoftware/Brave-Origin'] — enable chrome://inspect/#remote-debugging, or set BU_CDP_WS for a remote browser\n\nSTDERR: \n", 'success': True}
+2026-09-13 20:33:23.142 | INFO     | app.agent.toolcall:execute_tool:188 - 🔧 Activating tool: 'python_execute'...
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'underscore_attrs_are_private' has been removed
+  warnings.warn(message, UserWarning)
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'underscore_attrs_are_private' has been removed
+  warnings.warn(message, UserWarning)
+2026-09-13 20:33:24.094 | INFO     | app.agent.toolcall:act:151 - 🎯 Tool 'python_execute' completed its mission! Result: Observed output of cmd `python_execute` executed:
+{'observation': "[Errno 2] No such file or directory: 'browser-use'", 'success': False}
+2026-09-13 20:33:24.095 | INFO     | app.agent.base:run:140 - Executing step 3/20
+2026-09-13 20:33:26.239 | INFO     | app.llm:update_token_count:243 - Token usage: Input=5276, Completion=413, Cumulative Input=14247, Cumulative Completion=718, Total=5689, Cumulative Total=14965
+2026-09-13 20:33:26.240 | INFO     | app.agent.toolcall:think:81 - ✨ Manus's thoughts: Chrome isn't exposing a DevTools endpoint. Let me check what browser processes are running.
+2026-09-13 20:33:26.240 | INFO     | app.agent.toolcall:think:82 - 🛠️ Manus selected 2 tools to use
+2026-09-13 20:33:26.240 | INFO     | app.agent.toolcall:think:86 - 🧰 Tools being prepared: ['python_execute', 'python_execute']
+2026-09-13 20:33:26.240 | INFO     | app.agent.toolcall:think:89 - 🔧 Tool arguments: {"code": "import subprocess\nout = subprocess.run([\"ps\", \"aux\"], capture_output=True, text=True)\nfor line in out.stdout.splitlines():\n    low = line.lower()\n    if any(k in low for k in [\"chrome\", \"chromium\", \"brave\", \"msedge\", \"comet\", \"arc\", \"dia\"]) and \"grep\" not in low:\n        print(line[:200])"}
+2026-09-13 20:33:26.241 | INFO     | app.agent.toolcall:execute_tool:188 - 🔧 Activating tool: 'python_execute'...
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'underscore_attrs_are_private' has been removed
+  warnings.warn(message, UserWarning)
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'underscore_attrs_are_private' has been removed
+  warnings.warn(message, UserWarning)
+2026-09-13 20:33:27.267 | INFO     | app.agent.toolcall:act:151 - 🎯 Tool 'python_execute' completed its mission! Result: Observed output of cmd `python_execute` executed:
+{'observation': 'root               565   7.9  0.2 435393168  32160   ??  Ss    6:17PM   0:08.20 /usr/libexec/searchpartyd\nngbee             4729   4.5  4.3 1949551952 721104   ??  S     8:24PM   1:06.07 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/153.0.8010.36/Helpers/Go\nngbee              827   2.5  0.2 435395536  37552   ??  S     6:18PM   0:02.91 /usr/libexec/searchpartyuseragent\nngbee             1673   0.7  1.3 486689392 226368   ??  S     6:49PM   1:45.52 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/153.0.8010.36/Helpers/Goo\nngbee             1939   0.0  0.5 486117648  90016   ??  S     8:06PM   0:00.28 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/153.0.8010.36/Helpers/Goo\nngbee             1919   0.0  1.1 1949309936 189040   ??  S     8:03PM   0:00.35 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/153.0.8010.36/Helpers/Go\nngbee             1703   0.0  0.1 435401472  11488   ??  Ss    6:49PM   0:00.60 /System/Library/PrivateFrameworks/MediaConversionService.framework/Versions/A/XPCServices/com.apple.photos.ImageConversi\nngbee             1683   0.0  1.2 1949244048 203600   ??  S     6:49PM   0:01.96 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/153.0.8010.36/Helpers/Go\nngbee             1679   0.0  0.9 1949234240 155248   ??  S     6:49PM   0:01.98 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/153.0.8010.36/Helpers/Go\nngbee             1675   0.0  0.5 486119680  85312   ??  S     6:49PM   0:00.28 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/153.0.8010.36/Helpers/Goo\nngbee             1674   0.0  0.9 486188672 148832   ??  S     6:49PM   0:16.05 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/153.0.8010.36/Helpers/Goo\nngbee             1669   0.0  0.1 485718048   9664   ??  S     6:49PM   0:00.01 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/153.0.8010.36/Helpers/chr\nngbee             1660   0.0  2.2 537208992 374144   ??  S     6:49PM   0:41.75 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --no-startup-window\nngbee             1549   0.0  0.1 435384624   8416   ??  Ss    6:26PM   0:00.07 /System/Library/PrivateFrameworks/AssistantServices.framework/Versions/A/XPCServices/media-indexer.xpc/Contents/MacOS/me\nroot              1545   0.0  0.0 435357888   5808   ??  Ss    6:26PM   0:00.04 /usr/libexec/sysdiagnosed\nngbee             1499   0.0  0.0 435305536   5776   ??  S     6:24PM   0:00.04 /System/Library/Frameworks/MediaExtension.framework/Versions/A/Helpers/MENotificationAgent\nngbee              849   0.0  0.1 435358864  11648   ??  S     6:18PM   0:00.29 /System/Library/CoreServices/diagnostics_agent\nroot               795   0.0  0.1 435358768   9488   ??  Ss    6:18PM   0:00.63 /System/Library/CoreServices/SubmitDiagInfo server-init\nngbee             1002   0.0  0.1 435357264   9392   ??  S     6:18PM   0:00.19 /usr/libexec/diagnosticextensionsd\nngbee              833   0.0  0.1 435361104  11888   ??  Ss    6:18PM   0:00.36 /System/Library/PrivateFrameworks/TrialServer.framework/Versions/A/XPCServices/TrialArchivingService.xpc/Contents/MacOS/\nngbee              815   0.0  0.0 435321696   3872   ??  S     6:18PM   0:00.03 /System/Library/PrivateFrameworks/MediaRemote.framework/Support/mediaremoteagent\nngbee              814   0.0  0.1 439820256  23488   ??  S     6:18PM   0:04.70 /System/Library/PrivateFrameworks/AppleMediaServicesUI.framework/amsengagementd\nngbee              782   0.0  0.0 435321936   2368   ??  S     6:17PM   0:00.04 /System/Library/Frameworks/MediaAccessibility.framework/Versions/A/XPCServices/com.apple.accessibility.mediaaccessibilit\nngbee              779   0.0  0.2 435364496  27936   ??  S     6:17PM   0:00.91 /System/Library/PrivateFrameworks/AppleMediaServices.framework/Resources/amsaccountsd\nngbee              762   0.0  0.1 435364912  13408   ??  S     6:17PM   0:00.33 /System/Library/PrivateFrameworks/ContinuousDialogManagerService.framework/assistant_cdmd\nngbee              729   0.0  0.4 435410448  60576   ??  S     6:17PM   0:02.53 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\nroot               572   0.0  0.0 435360752   6336   ??  Ss    6:17PM   0:00.17 /usr/libexec/symptomsd-diag\n_cmiodalassistants   541   0.0  0.0 435357376   7248   ??  Ss    6:17PM   0:00.10 /System/Library/Frameworks/CoreMediaIO.framework/Versions/A/Resources/UVCAssistant.systemextension/Contents/MacOS/UVCA\nroot               399   0.0  0.2 435356832  25504   ??  Ss    6:17PM   0:01.19 /System/Library/Frameworks/CoreMediaIO.framework/Versions/A/Resources/com.apple.cmio.registerassistantservice\nroot               334   0.0  0.1 435363744  17104   ??  Ss    6:17PM   0:01.35 /System/Library/PrivateFrameworks/MediaRemote.framework/Support/mediaremoted\nngbee             5450   0.0  1.1 435489136 188016 s002  S+    8:32PM   0:01.51 /Users/ngbee/.cache/uv/archive-v0/0bEo9MtKA0pHHpr8/bin/python /Users/ngbee/.cache/uv/archive-v0/0bEo9MtKA0pHHpr8/bin/bro\nngbee             4733   0.0  0.6 1949158192 104304   ??  S     8:24PM   0:00.07 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/153.0.8010.36/Helpers/Go\nngbee             1951   0.0  0.1 485716944   9344   ??  S     8:11PM   0:00.01 /Applications/Visual Studio Code.app/Contents/Frameworks/Electron Framework.framework/Helpers/chrome_crashpad_handler --\nngbee             1946   0.0  2.4 1951570368 402064   ??  S     8:09PM   0:17.92 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/153.0.8010.36/Helpers/Go\n', 'success': True}
+2026-09-13 20:33:27.267 | INFO     | app.agent.toolcall:execute_tool:188 - 🔧 Activating tool: 'python_execute'...
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'underscore_attrs_are_private' has been removed
+  warnings.warn(message, UserWarning)
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.6.0)/charset_normalizer (3.5.1) doesn't match a supported version!
+  warnings.warn(
+/Users/ngbee/Open-Source tools/OpenManus/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'underscore_attrs_are_private' has been removed
+  warnings.warn(message, UserWarning)
+2026-09-13 20:33:28.296 | INFO     | app.agent.toolcall:act:151 - 🎯 Tool 'python_execute' completed its mission! Result: Observed output of cmd `python_execute` executed:
+{'observation': 'True /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\nFalse /Applications/Chromium.app/Contents/MacOS/Chromium\nFalse /Applications/Brave Browser.app/Contents/MacOS/Brave Browser\nFalse /Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge\nPORTFILE /Users/ngbee/Library/Application Support/Postman/DevToolsActivePort 49154\n/devtools/browser/68081215-2a00-4c24-9985-79cfba35f9b9\n', 'success': True}
+2026-09-13 20:33:28.297 | INFO     | app.agent.base:run:140 - Executing step 4/20
