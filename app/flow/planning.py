@@ -45,7 +45,7 @@ class PlanStepStatus(str, Enum):
 class PlanningFlow(BaseFlow):
     """A flow that manages planning and execution of tasks using agents."""
 
-    llm: LLM = Field(default_factory=lambda: LLM())
+    llm: LLM = Field(default_factory=lambda: LLM(config_name="planning"))
     planning_tool: PlanningTool = Field(default_factory=PlanningTool)
     executor_keys: List[str] = Field(default_factory=list)
     active_plan_id: str = Field(default_factory=lambda: f"plan_{int(time.time())}")
